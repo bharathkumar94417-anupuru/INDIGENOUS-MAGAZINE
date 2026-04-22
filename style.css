@@ -1,3 +1,6 @@
+/* =========================
+   RESET
+   ========================= */
 * {
   margin: 0;
   padding: 0;
@@ -7,23 +10,45 @@
 body {
   background: #111;
   color: white;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-/* HEADER */
+/* =========================
+   GLOBAL LINKS
+   ========================= */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: #ccc;
+}
+
+/* =========================
+   HEADER
+   ========================= */
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 40px;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
   margin-left: 20px;
 }
 
-/* HERO */
+/* =========================
+   HERO SECTION
+   ========================= */
 .hero {
   position: relative;
   height: 100vh;
@@ -42,12 +67,15 @@ nav a {
   transform: translateX(-50%);
   font-size: 100px;
   letter-spacing: 10px;
+  text-align: center;
 }
 
-/* GRID */
+/* =========================
+   GRID (HOME)
+   ========================= */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 40px;
 }
@@ -58,60 +86,46 @@ nav a {
   object-fit: cover;
 }
 
-/* MODELS */
+/* =========================
+   MODELS PAGE
+   ========================= */
 .models-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   padding: 40px;
 }
 
 .model-card img {
   width: 100%;
-  height: auto;     /* 🔥 keeps original ratio */
+  height: auto;
   object-fit: contain;
 }
 
-
-/* MAGAZINE */
+/* =========================
+   MAGAZINE
+   ========================= */
 .magazine-container {
   padding: 40px;
 }
 
 .mag-item a {
-  color: white;
-  text-decoration: none;
   font-size: 24px;
 }
 
-/* ABOUT */
-.about-text {
-  padding: 40px;
-}
-/* ===== LINK COLOR FIX (MAKE ALL TEXT WHITE) ===== */
-a {
-  color: white;
-  text-decoration: none;
-}
-
-a:visited {
-  color: white;
-}
-
-a:hover {
-  color: #ccc; /* optional hover effect */
-}
-/* FOLLOW PAGE */
+/* =========================
+   FOLLOW PAGE
+   ========================= */
 .follow-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   padding: 60px;
 }
+
 /* =========================
    ABOUT PAGE
    ========================= */
-
 .about-page {
   background: black;
   color: white;
@@ -126,21 +140,21 @@ a:hover {
   overflow: hidden;
 }
 
-/* 🔥 BIG BACKGROUND LOGO */
+/* BIG BACKGROUND LOGO */
 .about-bg-logo {
   position: absolute;
   font-size: 180px;
   font-weight: 900;
   letter-spacing: 20px;
-
-  color: rgba(255,255,255,0.05); /* ghost effect */
+  color: rgba(255, 255, 255, 0.05);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
+  animation: float 6s ease-in-out infinite;
 }
 
-/* TEXT CONTENT */
+/* ABOUT CONTENT */
 .about-content {
   position: relative;
   max-width: 600px;
@@ -158,21 +172,84 @@ a:hover {
   color: #ccc;
 }
 
-.about-bg-logo {
-  animation: float 6s ease-in-out infinite;
-}
-
+/* FLOAT ANIMATION */
 @keyframes float {
   0% { transform: translate(-50%, -50%) translateY(0); }
   50% { transform: translate(-50%, -50%) translateY(-10px); }
   100% { transform: translate(-50%, -50%) translateY(0); }
 }
+
+/* =========================
+   IMAGES SAFETY
+   ========================= */
 img {
   max-width: 100%;
   height: auto;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+/* =========================
+   =========================
+   MOBILE RESPONSIVE DESIGN
+   ========================= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 10px;
+    display: inline-block;
+  }
+
+  /* HERO */
+  .hero-logo {
+    font-size: 40px;
+    letter-spacing: 5px;
+  }
+
+  /* GRID */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+  }
+
+  /* MODELS */
+  .models-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* FOLLOW */
+  .follow-container {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  /* ABOUT */
+  .about-section {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .about-bg-logo {
+    font-size: 60px;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+  .about-content h2 {
+    font-size: 32px;
+  }
 }
