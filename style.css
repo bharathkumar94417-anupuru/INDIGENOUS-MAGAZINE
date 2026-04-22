@@ -253,3 +253,37 @@ img {
     font-size: 32px;
   }
 }
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* HOME GRID IMAGES */
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* MODELS IMAGES (BEST FIT FOR FASHION STYLE) */
+.model-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* MOBILE ADJUSTMENT */
+@media (max-width: 768px) {
+  .card img {
+    height: 200px;
+  }
+
+  .model-card img {
+    aspect-ratio: 3 / 4;
+  }
+}
