@@ -167,3 +167,12 @@ a:hover {
   50% { transform: translate(-50%, -50%) translateY(-10px); }
   100% { transform: translate(-50%, -50%) translateY(0); }
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
